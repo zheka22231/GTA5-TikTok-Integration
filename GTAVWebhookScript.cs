@@ -380,3 +380,21 @@ public class GTAVWebhookScript : Script
         }
     }
 }
+case "skydive":
+{
+    // Установите начальную скорость вверх (например, 10 единиц в секунду)
+    float initialVerticalSpeed = 10f;
+
+    // Установите новую позицию персонажа
+    Vector3 newPosition = new Vector3(Game.Player.Character.Position.X, Game.Player.Character.Position.Y, Game.Player.Character.Position.Z + 10);
+
+    // Переместите персонажа на новую позицию
+    Game.Player.Character.Position = newPosition;
+
+    // Установите начальную вертикальную скорость
+    Game.Player.Character.Velocity = new Vector3(0, 0, initialVerticalSpeed);
+
+    Logger.Log("Skydive started");
+    break;
+}
+
