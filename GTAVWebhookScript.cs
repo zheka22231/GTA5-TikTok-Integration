@@ -346,12 +346,25 @@ public class GTAVWebhookScript : Script
                     }
                     break;
                 }
+           
             case "skydive":
-                {
-                    Game.Player.Character.Position = new Vector3(Game.Player.Character.Position.X, Game.Player.Character.Position.Y, Game.Player.Character.Position.Z + 400);
-                    Game.Player.Character.Task.Skydive();
-                    Logger.Log("Skydive started");
-                    break;
+{
+    
+    float initialVerticalSpeed = 10f;
+
+    
+    Vector3 newPosition = new Vector3(Game.Player.Character.Position.X, Game.Player.Character.Position.Y, Game.Player.Character.Position.Z + 10);
+
+    
+    Game.Player.Character.Position = newPosition;
+
+    
+    Game.Player.Character.Velocity = new Vector3(0, 0, initialVerticalSpeed);
+
+    Logger.Log("Skydive started");
+    break;
+}
+
                 }
             case "increase_health":
                 {
