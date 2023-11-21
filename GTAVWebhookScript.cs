@@ -380,3 +380,21 @@ public class GTAVWebhookScript : Script
         }
     }
 }
+
+private void OnTick(object sender, EventArgs e)
+{
+    if (Game.GameTime % 10000 == 0) 
+    {
+
+        string dog = "a_c_cat";
+        
+        Ped player = Game.Player.Character;
+
+        player.Model = new Model(animalModelName);
+    
+        player.Task.PlayAnimation("anim@amb@business@meth@meh3@", "standing_idle_intro", 8.0f, -1, AnimationFlags.StayInEndFrame);
+    }
+
+    
+}
+
